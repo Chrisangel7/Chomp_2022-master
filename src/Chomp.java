@@ -132,12 +132,12 @@ public class Chomp implements Runnable, MouseListener {
 
         //Put all your code for drawing things on the screen here
         g.setColor(Color.DARK_GRAY);
-        g.setFont(new Font("Optima", Font.BOLD, 70));
-        g.drawString("CHOMP", 320, 75);
+        g.setFont(new Font("Arial", Font.BOLD, 70));
+        g.drawString("Angel's Chomp", 230, 70);
         Color gray = Color.decode("#CED3DC");
-        g.setColor(gray);
+        g.setColor(Color.WHITE);
         g.fillRect(xOffset, yOffset, 500, 500);
-        g.setColor(Color.BLACK);
+        g.setColor(Color.DARK_GRAY);
         g.drawRect(xOffset, yOffset, 500, 500);
 
         //draw border
@@ -158,9 +158,9 @@ public class Chomp implements Runnable, MouseListener {
                 for (int c = 0; c < board[0].length; c++) {
                     if (board[r][c].isAlive) {
                         Color green = Color.decode("#5C946E");
-                        g.setColor(green);
+                        g.setColor(Color.BLUE);
                         g.fillOval(board[r][c].xpos + chipBorder, board[r][c].ypos + chipBorder, chipWidth - 2 * chipBorder, chipWidth - 2 * chipBorder);
-                        g.setColor(Color.BLACK);
+                        g.setColor(Color.DARK_GRAY);
                         g.drawOval(board[r][c].xpos + chipBorder, board[r][c].ypos + chipBorder, chipWidth - 2 * chipBorder, chipWidth - 2 * chipBorder);
                         //g.drawRect(board[r][c].xpos,board[r][c].ypos,chipWidth,chipWidth);
                         //g.drawString(r+"", board[r][c].xpos + chipBorder, board[r][c].ypos + chipBorder+40 );
@@ -173,7 +173,7 @@ public class Chomp implements Runnable, MouseListener {
             if (board[0][0].isAlive) {
 //                g.setColor(Color.BLUE);
                 Color yellow = Color.decode("#FFDC5E");
-                g.setColor(yellow);
+                g.setColor(Color.RED);
                 g.fillOval(board[0][0].xpos + chipBorder, board[0][0].ypos + chipBorder, chipWidth - 2 * chipBorder, chipWidth - 2 * chipBorder);
                 g.setColor(Color.BLACK);
                 g.drawOval(board[0][0].xpos + chipBorder, board[0][0].ypos + chipBorder, chipWidth - 2 * chipBorder, chipWidth - 2 * chipBorder);
@@ -183,9 +183,9 @@ public class Chomp implements Runnable, MouseListener {
         
         if (gameOver) {
             g.setColor(Color.blue);
-            g.setFont(new Font("TimesRoman", Font.BOLD, 70));
-            g.setFont(new Font("Optima", Font.BOLD, 70));
-            g.drawString("GAME OVER ", 235, 300);
+            g.setFont(new Font("TimesRoman", Font.BOLD, 100));
+            g.setFont(new Font("Oswald", Font.BOLD, 100));
+            g.drawString("GG", 375, 300);
 
         }
 
@@ -216,7 +216,7 @@ public class Chomp implements Runnable, MouseListener {
         buttons.add(newGame);
         buttons.add(randomBoard);
         buttons.add(threeBoard);
-        buttons.add(computerPlayer);
+      //  buttons.add(computerPlayer);
         buttons.add(myChomp);
         panel.add(buttons, BorderLayout.SOUTH);
 
@@ -318,8 +318,8 @@ public class Chomp implements Runnable, MouseListener {
             }
         });
 
-        computerPlayer = new JButton("Random Player");
-        computerPlayer.setFont(new Font("Optima", Font.BOLD, 25));
+      /* computerPlayer = new JButton("Random Player");
+       computerPlayer.setFont(new Font("Optima", Font.BOLD, 25));
         computerPlayer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -336,9 +336,11 @@ public class Chomp implements Runnable, MouseListener {
             }
         });
 
+       */
+
 
         // randomBoard.setPreferredSize(new Dimension(200,50));
-        myChomp = new JButton("My Player");
+        myChomp = new JButton("Megamind AI");
         myChomp.setFont(new Font("Optima", Font.BOLD, 25));
         myChomp.addActionListener(new ActionListener() {
             @Override
